@@ -1,15 +1,8 @@
+import { Loading } from "./lottie/loading/index";
+import Main from "./app/index";
 
-import {Loading} from "./lottie/loading/index";
-import "./App.css";
-
- function App() {
-  return (
-    <div className="App">
-      <div className="blurry">
-        <Loading />
-      </div>
-    </div>
-  );
+function App() {
+  return (<Main><Loading/></Main>);
 }
 
 export default App;
