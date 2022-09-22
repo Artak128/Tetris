@@ -1,6 +1,6 @@
-import style from "./index.module.scss";
+import style from "./style.module.scss";
 
- function Main(props) {
+ function Background(props) {
   return (
     <div className={style.background}>
       <div className={style.blurry}>
@@ -10,4 +10,4 @@ import style from "./index.module.scss";
   );
 }
 
-export default Main;
+export default Background;

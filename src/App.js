@@ -1,9 +1,11 @@
+import Background from "./components/background";
 import { Loading } from "./lottie/loading/index";
-import Main from "./app/index";
+import "./App.css";
+
 
 function App() {
-  return (<Main><Loading/></Main>);
+  return (<Background ><div className="main"><Loading/></div></Background>);
 }
 
 export default App;
-//9:32
+//13:32
