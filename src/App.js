@@ -1,11 +1,16 @@
-import Background from "./components/background";
+import Background from "./components/Background";
 import { Loading } from "./lottie/loading/index";
+import Tetris from "./components/Tetris";
 import "./App.css";
 
-
+let condition = false;
 function App() {
-  return (<Background ><div className="main"><Loading/></div></Background>);
+  return (
+    <Background>
+      <div className="main">{condition ? <Loading /> : <Tetris />}</div>
+    </Background>
+  );
 }
 
 export default App;
-//13:32
+//18:00

@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Cell from "../Cell";
 import style from "./style.module.scss";
 
