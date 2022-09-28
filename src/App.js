@@ -1,7 +1,7 @@
 import Background from "./components/Background";
 import { Loading } from "./lottie/loading/index";
 import Tetris from "./components/Tetris";
-import "./App.css";
+import "./App.scss";
 
 let condition = false;
 function App() {
@@ -13,4 +13,4 @@ function App() {
 }
 
 export default App;
-//33:00
+//37:00
