@@ -1,11 +1,13 @@
-import Stage from "../Stage.js";
+import Stage from "../Stage/index.js";
 import Display from "../Display/index.js";
 import StartButton from "../StartButton";
+import { createStage } from "../../utils/helpers.js";
+import style from "./style.module.scss";
 
 function Tetris() {
   return (
-    <div>
-      <Stage />
+    <div className={style.tetris}>
+      <Stage stage={createStage()} />
       <aside>
         <div>
           <Display text="Score" />

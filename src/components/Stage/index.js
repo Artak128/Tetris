@@ -2,10 +2,10 @@
 import Cell from "../Cell";
 import style from "./style.module.scss";
 
-function Stage({ gameOver, text }) {
+function Stage({ stage}) {
   return (
     <div className={style.stage}>
-      <Cell />
+      {stage.map(row => row.map((cell, x)=><Cell key={x} type={cell[0]}/>))}
     </div>
   );
 }
