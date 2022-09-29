@@ -4,7 +4,13 @@ import { StyledCell } from "../Styles/StyledCell";
 import { TETROMINOS } from "../../utils/tetrominos";
 
 function Cell({ type }) {
-  return <StyledCell className={style.cell}>Cell</StyledCell>;
+  return (
+    <div className={style.cell}>
+      <StyledCell type={"L"} color={TETROMINOS["L"].color}>
+        Cell
+      </StyledCell>
+    </div>
+  );
 }
 
 Cell.defaultProps = {};

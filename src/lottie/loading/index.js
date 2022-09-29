@@ -1,5 +1,5 @@
 import { useLottie } from "lottie-react";
-import loading from "../../assets/JSON/loading.json";
+import loading from "./../../assets/animation/loading.json";
 
 const style = {
   width: 300,
@@ -9,7 +9,7 @@ const style = {
 export function Loading({condition}) {
   const options = {
     animationData: loading,
-    loop: 2,
+    loop: 1,
     autoplay: true,
   };
 
