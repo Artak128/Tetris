@@ -6,9 +6,7 @@ import style from "./style.module.scss";
 function Cell({ type }) {
   return (
     <div className={style.cell}>
-      <StyledCell type={"L"} color={TETROMINOS["L"].color}>
-        Cell
-      </StyledCell>
+      <StyledCell type={"L"} color={TETROMINOS["L"].color} />
     </div>
   );
 }

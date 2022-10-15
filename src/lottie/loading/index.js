@@ -1,12 +1,11 @@
 import { useLottie } from "lottie-react";
 import loading from "./../../assets/animation/loading.json";
 
-const style = {
-  width: 300,
-  height: 300,
-};
-
 export function Loading({condition}) {
+  const style = {
+    width: 300,
+    height: 300,
+  };
   const options = {
     animationData: loading,
     loop: 1,

@@ -12,6 +12,10 @@
       format("svg"); /* Legacy iOS */
 }
 
+html {
+  font-size: min(calc(100vh * 16 / 753), calc(100vw * 16 / 1536));
+}
+
 body {
   box-sizing: border-box;
   padding: 0;

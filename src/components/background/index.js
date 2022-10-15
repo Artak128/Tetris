@@ -1,10 +1,10 @@
 import style from "./style.module.scss";
 
- function Background(props) {
+ function Background({children}) {
   return (
     <div className={style.background}>
       <div className={style.blurry}>
-        {props.children}
+        {children}
       </div>
     </div>
   );

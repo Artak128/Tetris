@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const StyledTetris = styled.div`
   display: flex;
   align-items: flex-start;
-  padding: 40px;
-  margin: 0 auto;
-  max-width: 900px;
+  padding: 2.5rem;
 
   aside {
-    width: 100%;
-    max-width: 200px;
-    display: block;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 12.5rem;
+    padding: 0 1.25rem;
+     *:not(:last-child){
+      margin: 0 0 1rem 0;
+     }
   }
 `;

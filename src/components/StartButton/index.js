@@ -1,11 +1,12 @@
 // import PropTypes from "prop-types";
+import { StyledStartButton } from "../Styles/StyledStartButton";
 import style from "./style.module.scss";
 
 function StartButton({ callback }) {
   return (
-    <div className={style.startButton}>
-      Start Game
-    </div>
+    <StyledStartButton onClick={callback} className={style.startButton}>
+      <span>Start Game</span>
+    </StyledStartButton>
   );
 }
 
