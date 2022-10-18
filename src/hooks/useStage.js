@@ -12,7 +12,6 @@ import { createStage } from '../utils/helpers';
  * 
  * The second element of the array is the setStage function. This function is used to update the stage.
  * 
- * 
  * The useEffect hook is used to update the stage. The useEffect hook is called whenever the
  * player.collided, player.pos.x, player.pos.y, or player.tetromino variables change.
  * 
