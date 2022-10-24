@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const StyledTetrisWrapper = styled.div`
-
-`;
+export const StyledTetrisWrapper = styled.div``;
 
 export const StyledTetris = styled.div`
   display: flex;
@@ -14,8 +12,8 @@ export const StyledTetris = styled.div`
     flex-direction: column;
     max-width: 12.5rem;
     padding: 0 1.25rem;
-     *:not(:last-child){
+    *:not(:last-child) {
       margin: 0 0 1rem 0;
-     }
+    }
   }
 `;
