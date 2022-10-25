@@ -1,4 +1,4 @@
-import Background from "./components/Background";
+import Background from "../src/components/background";
 import { Loading } from "./lottie/loading";
 import Tetris from "./components/Tetris";
 import "./App.scss";
@@ -13,4 +13,4 @@ function App() {
 }
 
 export default App;
-//1:26:01
+//1:39:01

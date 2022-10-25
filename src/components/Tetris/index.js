@@ -14,13 +14,14 @@ function Tetris() {
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
   const [stage, setStage] = useStage(player);
 
-  const movePlayer = dir => {
+  const movePlayer = (dir) => {
     updatePlayerPos({ x: dir, y: 0 });
   };
 
   const startGame = () => {
     //Reset Everything
     setStage(createStage());
+    console.log("!!!");
     resetPlayer();
   };
 
@@ -51,7 +52,7 @@ function Tetris() {
   };
 
   return (
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)}>
+    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={(e) => move(e)}>
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
@@ -64,7 +65,7 @@ function Tetris() {
               <Display text="Score" />
             </>
           )}
-          <StartButton onClick={startGame} />
+          <StartButton callback={startGame} />
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
