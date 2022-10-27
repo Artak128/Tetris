@@ -1,7 +1,7 @@
 /* Creating a constant variable called TETROMINOS. It is an object with a bunch of properties. Each
 property is a tetromino. Each tetromino has a shape and a color. */
 export const TETROMINOS = {
-  0: { shape: [[0]], color: "0,0,0" },
+  0: { shape: [[0]], color: "51,51,51" },
   I: {
     shape: [
       [0, "I", 0, 0],
@@ -60,7 +60,6 @@ export const TETROMINOS = {
   },
 };
 
-
 /**
  * The randomTetromino function returns a random tetromino from the TETROMINOS object.
  * @returns The tetromino that is being returned is the one that is being randomly selected.
@@ -69,5 +68,5 @@ export const randomTetromino = () => {
   const tetrominos = "IJLOSTZ";
   const randTetromino =
     tetrominos[Math.floor(Math.random() * tetrominos.length)];
-    return TETROMINOS[randTetromino]
+  return TETROMINOS[randTetromino];
 };
