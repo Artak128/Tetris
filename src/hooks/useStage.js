@@ -20,6 +20,10 @@ import { createStage } from "../utils/helpers";
  * @param resetPlayer - This is a function that resets the player to its initial state.
  */
 export const useStage = (player, resetPlayer) => {
+  // export const createStage = () =>
+  // Array.from(Array(STAGE_HEIGHT), () =>
+  //   new Array(STAGE_WIDTH).fill([0, "clear"])
+  // );
   const [stage, setStage] = useState(createStage());
 
   /** */
@@ -41,12 +45,16 @@ export const useStage = (player, resetPlayer) => {
           }
         });
       });
+      //Then check if we collided
+      if (player.colided) {
+        resetPlayer();
+      }
 
       return newStage;
     };
 
     setStage((prev) => updateStage(prev));
-  }, [player]);
+  }, [player, resetPlayer]);
 
   return [stage, setStage];
 };

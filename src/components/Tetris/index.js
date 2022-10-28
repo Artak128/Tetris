@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Stage from "../Stage/index.js";
 import Display from "../Display/index.js";
+import { checkCollision } from "../../utils/helpers.js";
 import StartButton from "../StartButton";
 import { createStage } from "../../utils/helpers.js";
 import { StyledTetris, StyledTetrisWrapper } from "../Styles/StyledTetris.js";
@@ -9,13 +10,18 @@ import { useStage } from "../../hooks/useStage.js";
 // import style from "./style.module.scss";
 
 function Tetris() {
-  const [dropTime, setDropTime] = useState(null);
+  // const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  // pos: { x: 0, y: 0 },
+  // tetromino: TETROMINOS[0].shape,
+  // collided: false,
   const [player, updatePlayerPos, resetPlayer] = usePlayer();
   const [stage, setStage] = useStage(player);
 
   const movePlayer = (dir) => {
-    updatePlayerPos({ x: dir, y: 0 });
+    if (!checkCollision(player, stage, { x: dir, y: 0 })) {
+      updatePlayerPos({ x: dir, y: 0 });
+    }
   };
 
   const startGame = () => {

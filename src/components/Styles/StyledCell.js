@@ -7,7 +7,7 @@ export const StyledCell = styled.div`
     ${(props) => (props.type === 0 ? "0,0,0 " : props.color)},
     0.8
   );
-  border: ${(props) => (props.type === 0 ? "0.01rem  solid" : "0.25rem solid")};
+  border: 0.01rem solid;
   border-bottom-color: rgba(${(props) => props.color}, 0.1);
   border-right-color: rgba(${(props) => props.color}, 1);
   border-top-color: rgba(${(props) => props.color}, 1);

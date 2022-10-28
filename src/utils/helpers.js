@@ -10,6 +10,9 @@ export const createStage = () =>
     new Array(STAGE_WIDTH).fill([0, "clear"])
   );
 
+/**
+ * We're checking if the Tetromino is inside the game area and if it's not colliding with any other Tetromino
+ */
 export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
   for (let y = 0; y < player.tetromino.length; y += 1) {
     for (let x = 0; x < player.tetromino[y].length; x += 1) {
