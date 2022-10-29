@@ -1,4 +1,4 @@
-import Background from "../src/components/background";
+import Background from "../src/components/Background";
 import { Loading } from "./lottie/loading";
 import Tetris from "./components/Tetris";
 import "./App.scss";
