@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { createStage } from "../utils/helpers";
+import { initialStage } from "../utils/initialStage"; 
 
 /**
  * "useStage is a function that takes in two parameters, player and resetPlayer, and returns an array
@@ -24,7 +24,7 @@ export const useStage = (player, resetPlayer) => {
   // Array.from(Array(STAGE_HEIGHT), () =>
   //   new Array(STAGE_WIDTH).fill([0, "clear"])
   // );
-  const [stage, setStage] = useState(createStage());
+  const [stage, setStage] = useState(initialStage);
 
   /** */
   useEffect(() => {
@@ -33,6 +33,7 @@ export const useStage = (player, resetPlayer) => {
       const newStage = prevStage.map((row) =>
         row.map((cell) => (cell[1] === "clear" ? [0, "clear"] : cell))
       );
+      // console.log({newStage})
 
       // Then draw the tetromino
       player.tetromino.forEach((row, y) => {

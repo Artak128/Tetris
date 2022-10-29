@@ -1,7 +1,8 @@
 import { useState, useCallback } from "react";
 
-import { TETROMINOS, randomTetromino } from "../utils/tetrominos";
-import { STAGE_WIDTH } from "../utils/helpers";
+import { TETROMINOS } from "../utils/tetrominos";
+import { STAGE_WIDTH } from "../utils/initialStage";
+import { randomTetromino } from "../utils/helpers"; 
 
 /**
  * It returns an array with the player's state, a function that updates the player's position, and a

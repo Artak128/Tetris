@@ -3,7 +3,7 @@ import Stage from "../Stage/index.js";
 import Display from "../Display/index.js";
 import { checkCollision } from "../../utils/helpers.js";
 import StartButton from "../StartButton";
-import { createStage } from "../../utils/helpers.js";
+import { initialStage } from "../../utils/initialStage.js";
 import { StyledTetris, StyledTetrisWrapper } from "../Styles/StyledTetris.js";
 import { usePlayer } from "../../hooks/usePlayer.js";
 import { useStage } from "../../hooks/useStage.js";
@@ -26,7 +26,7 @@ function Tetris() {
 
   const startGame = () => {
     //Reset Everything
-    setStage(createStage());
+    setStage(initialStage);
     resetPlayer();
   };
 

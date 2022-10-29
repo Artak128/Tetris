@@ -60,13 +60,6 @@ export const TETROMINOS = {
   },
 };
 
-/**
- * The randomTetromino function returns a random tetromino from the TETROMINOS object.
- * @returns The tetromino that is being returned is the one that is being randomly selected.
- */
-export const randomTetromino = () => {
-  const tetrominos = "IJLOSTZ";
-  const randTetromino =
-    tetrominos[Math.floor(Math.random() * tetrominos.length)];
-  return TETROMINOS[randTetromino];
-};
+
+
+
