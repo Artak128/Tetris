@@ -2,6 +2,7 @@ import { TETROMINOS } from "./tetrominos";
 
 /**
  * We're checking if the Tetromino is inside the game area and if it's not colliding with any other Tetromino
+ * if outside or colliding then function return true
  */
 export const checkCollision = (player, stage, { x: moveX, y: moveY }) => {
   for (let y = 0; y < player.tetromino.length; y += 1) {
