@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 
 import { TETROMINOS } from "../utils/tetrominos";
 import { STAGE_WIDTH } from "../utils/initialStage";
-import { randomTetromino } from "../utils/helpers"; 
+import { checkCollision, randomTetromino } from "../utils/helpers";
 
 /**
  * It returns an array with the player's state, a function that updates the player's position, and a
@@ -15,9 +15,31 @@ export const usePlayer = () => {
     collided: false,
   });
 
+  const rotate = (matrix, dir) => {
+    // Make the rows to become cols (transpose)
+    const rotatedTetro = matrix.map((_, index) =>
+      matrix.map((col) => col[index])
+    );
+    // Reverse each row to get a rotated matrix
+    if (dir > 0) return rotatedTetro.map((row) => row.reverse());
+    return rotatedTetro.reverse();
+  };
+
+  const playerRotate = (stage, dir) => {
+    const clonedPlayer = JSON.parse(JSON.stringify(player));
+    clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
+
+    const pos = clonedPlayer.pos.x;
+    let offset = 1;
+    while (checkCollision(clonedPlayer, stage, { x: 0, y: 0 })) {
+      clonedPlayer.pos.x += offset;
+      offset = -(offset + (offset > 0 ? 1 : -1));
+    }
+    setPlayer(clonedPlayer);
+  };
 
   const updatePlayerPos = ({ x, y, collided }) => {
-    setPlayer(prev => ({
+    setPlayer((prev) => ({
       ...prev,
       pos: { x: (prev.pos.x += x), y: (prev.pos.y += y) },
       collided,
@@ -32,7 +54,5 @@ export const usePlayer = () => {
     });
   }, []);
 
-  return [player, updatePlayerPos, resetPlayer];
+  return [player, updatePlayerPos, resetPlayer, playerRotate];
 };
-
- 

@@ -1,5 +1,6 @@
 {
     "docwriter.style": "Auto-detect",
     "docwriter.progress.trackMethods": false,
-    "docwriter.progress.trackFunctions": false
+    "docwriter.progress.trackFunctions": false,
+    "commentTranslate.source": "Google"
 }
