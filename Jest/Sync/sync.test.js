@@ -38,7 +38,7 @@ describe("Lodash: groupBy", () => {
   });
 
   test("Should group array items by Math.floor", () => {
-    const array = [2.2, 2.4, 2.4, 3.1];
+    const array = [2.2, 2.4, 4.2, 3.1];
     const result = {
       2: [2.2, 2.4],
       4: [4.2],
