@@ -1,4 +1,7 @@
 const Ajax = require("./async");
+const axios = require("axios");
+
+jest.mock("axios"); // Axios-ic import arac cankacac ban mock-ac a. Te inch hnaravorutyun a tali da mez Grvaca 2rd description-i mej
 
 const data = "some data";
 
@@ -26,5 +29,31 @@ describe("Ajax: echo", () => {
     } catch (e) {
       expect(e.message).toBe("Error");
     }
+  });
+});
+
+describe("Ajax GET", () => {
+  let response;
+  let todos;
+
+  beforeEach(() => {
+    todos = [{ id: 1, title: "Todo 1", completed: false }];
+    response = {
+      data: {
+        todos,
+      },
+    };
+  });
+
+  test("Should return data from backend", () => {
+    axios.get.mockReturnValue(response); // Qani vor verevum arden mock-el enq , da mez nor hnaravorutyunner a tvel
+    //Ays orinakum asum enq vor erb aystex axios-i get metod@ ogtagorcvi apa zapros chani, ayl dra poxaren veradarcni
+    // mockReturnValue()-in tvac arjeq@, tvyal depqum response-@, verjinis arjeq@ tvaca beforeEach-um:
+
+    return Ajax.get().then((data) => {
+      console.log(data);
+      // Qani vor Ajax-i get metodi mej ogtagorcvuma axios-i get metod@ apa ira vra el a azdum, nshanakuma request chi ani ayl kveradarcni mer tvac arjeq@
+      expect(data.todos).toEqual(todos);
+    });
   });
 });
