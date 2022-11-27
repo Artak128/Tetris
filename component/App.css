@@ -1,0 +1,84 @@
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 800px;
+}
+
+.circleAndNumber {
+  position: relative;
+  width: 5px;
+  height: 50px;
+  overflow: visible;
+}
+
+.circleOn {
+  width: 10px;
+  height: 10px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.circleOff {
+  width: 7px;
+  height: 7px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  background-color: brown;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.circleOff:hover {
+  width: 10px;
+  height: 10px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.numberLeft {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+
+.numberRight {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+.numberCenter {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line {
+  height: 3px;
+  background: linear-gradient(to right, #f08b0cff 50%, brown 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  flex-grow: 1;
+  transition: 2s;
+}
+
+.lineFirst {
+  flex-grow: 1.2;
+}
+
+.lineActive:hover {
+  background-position: left bottom;
+}
